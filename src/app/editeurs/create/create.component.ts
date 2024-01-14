@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Editeur } from '../editeur';
+import { EditeurserviceService } from '../editeurservice.service';
 
 @Component({
   selector: 'app-create',
@@ -7,4 +9,25 @@ import { Component } from '@angular/core';
 })
 export class CreateComponent {
 
+  @ViewChild('myModal') myModal!: ElementRef;
+  display = "none";
+  editeur: Editeur = new Editeur()
+
+  constructor(private editeurService: EditeurserviceService) { }
+
+  ajoutEditeur = () => {
+    this.editeurService.create(this.editeur).subscribe((data => {
+      console.log(data)
+       this.closeModal()
+       window.location.reload();
+    }))
+
+  }
+  openModal() {
+    this.display = "block";
+  }
+
+  closeModal() {
+    this.display = "none";
+  }
 }

@@ -6,6 +6,7 @@ import { IndexComponent } from './index/index.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { ViewComponent } from './view/view.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ViewComponent } from './view/view.component';
   ],
   imports: [
     CommonModule,
-    EditeursRoutingModule
+    EditeursRoutingModule,
+    FormsModule,
   ]
 })
 export class EditeursModule { }
