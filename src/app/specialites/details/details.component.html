@@ -1,0 +1,14 @@
+
+<h2 style="text-align: center;">Les livres</h2>
+<div class="row" >
+    <div class="col-md-2" *ngFor="let livre of livreservice" style="padding: 10px; width: 250px; height: 500px; margin-left: 100px; " >
+        <div class="card" style="width: 16rem; ">
+            <img src={{livre.couverture}} class="card-img-top" alt="..." style="height: 200px; width: 150px;">
+            <div class="card-body" style="padding: 10px; width: 250px; height: 200px; ">
+                <h5 class="card-title">{{livre.titre}}</h5>
+                <p class="card-text">{{livre.specialite.nomspecialite}}</p>
+                <a class="btn btn-primary" [routerLink]="['/livres/', livre._id, 'details']">Plus de détails</a>
+            </div>
+        </div>
+    </div>
+</div>

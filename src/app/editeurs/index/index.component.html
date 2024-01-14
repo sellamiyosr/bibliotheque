@@ -1,0 +1,43 @@
+<div class="container">
+    <h2 style="text-align: center;">Les éditeurs</h2>
+    <div>
+        <app-create></app-create>
+    </div>
+
+
+    <form class="d-flex" role="search" style="margin: 20px;">
+        <input class="form-control me-2" matInput (keyup)="filter($event)" type="search" placeholder="Search"
+            aria-label="Search">
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Maison d'édition</th>
+                <th>Site web</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let editeur of editeurs">
+
+                <td>{{ editeur.maisonedit }}</td>
+                <td>{{ editeur.siteweb }}</td>
+                <td>{{ editeur.email }}</td>
+                <td>
+                    <a [routerLink]="['/editeurs/', editeur._id, 'view']" class="btn btn-default">
+                        <i class="bi bi-eye-fill" style="color: dimgray;"></i>
+                    </a>
+                    <a [routerLink]="['/editeurs/', editeur._id,'edit']" class="btn btn-default">
+                        <i class="bi bi-pencil-fill" style="color: dimgray;"></i>
+                    </a>
+
+                    <button type="button" (click)="deleteEditeur(editeur._id)" class="btn btn-default">
+                        <i class="bi bi-trash-fill" style="color: brown;"></i>
+                    </button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

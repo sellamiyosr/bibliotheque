@@ -1,0 +1,21 @@
+<div class="container">
+    <h2 style="text-align: center;">Les Spécialités</h2>
+    <div>
+        <app-create></app-create>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-2" *ngFor="let specialite of specialites" style="margin-top: 10px; width: 100%;">
+    <div class="card" style="background-color: aliceblue">
+        <div class="card-body" >
+           <a [routerLink]="['/specialites/', specialite._id, 'details']"> <h2> {{specialite.nomspecialite}}</h2></a>
+            <button type="button" (click)="deleteSpecialite(specialite._id)" class="btn btn-default">
+                <i class="bi bi-trash-fill" style="color: brown;"></i>
+            </button>
+        </div>
+       
+      </div>
+        </div>
+    </div>
+</div>
