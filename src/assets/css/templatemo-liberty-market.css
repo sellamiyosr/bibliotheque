@@ -2005,8 +2005,8 @@ Create Page Style
   height: 46px;
   text-align: left;
   padding: 0px 15px;
-  background-color: #e75621;
-  border: 1px solid #404245;
+  background-color: #f9f5f4;
+  border: 1px solid #f7f4f3;
   margin-bottom: 30px;
   font-weight: 500;
   color: #afafaf;
@@ -2018,7 +2018,7 @@ Create Page Style
 
 #contact label {
   font-size: 15px;
-  color: #fff;
+  color: #100101;
   margin-bottom: 8px;
 }
 
