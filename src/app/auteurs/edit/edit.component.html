@@ -1,13 +1,14 @@
 <!-- Button trigger modal -->
-<a [routerLink]="['/auteurs/', auteurId,'edit']" class="btn btn-default" (click)="openModal()">
+<a class="btn btn-default" (click)="openModal()">
     <i class="bi bi-pencil-fill" style="color: dimgray;"></i>
 </a>
+
 <!-- Modal -->
 <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Ajout Produit</h4>
+                <h4 class="modal-title">Edit Auteur</h4>
                 <button type="button" class="btn btn-default" aria-label="Close" (click)="closeModal()"><span
                         aria-hidden="true">&times;</span></button>
             </div>
@@ -24,16 +25,16 @@
 <ng-template #formAuteur>
     <form (ngSubmit)="ajoutAuteur()">
         <div class="mb-3">
-            <input type="text" class="form-control" id="nomauteur" name="nomauteur" placeholder="Nom">
+            <input type="text" class="form-control" id="nomauteur" name="nomauteur" placeholder="Nom" [(ngModel)]=" auteur.nomauteur">
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" id="email" name="email" placeholder="@ Mail">
+            <input type="text" class="form-control" id="email" name="email" placeholder="@ Mail"[(ngModel)]=" auteur.email">
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" id="numtel" name="numtel" placeholder="numtel">
+            <input type="text" class="form-control" id="numtel" name="numtel" placeholder="numtel"[(ngModel)]=" auteur.numtel">
         </div>
         <div>
-            <button type="submit" class="btn btn-success" (clic)="ajoutAuteur()">Enregistrer</button>
+            <button type="submit" class="btn btn-default" style="color: #e86252;" (clic)="ajoutAuteur()">Enregistrer</button>
         </div>
     </form>
 </ng-template>

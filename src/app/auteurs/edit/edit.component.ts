@@ -7,22 +7,23 @@ import { AuteurserviceService } from '../auteurservice.service';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css'],
 })
-export class EditComponent implements OnInit{
+export class EditComponent implements OnInit {
   @Input() auteurId: object;
 
   @ViewChild('myModal') myModal!: ElementRef;
-  
+
   display = 'none';
   auteur: Auteur = new Auteur();
 
   constructor(private auteurService: AuteurserviceService) {}
   ngOnInit(): void {
-    console.log(this.auteurId);
-    
+    this.auteurService.findById(this.auteurId).subscribe(auteur => {
+      this.auteur=auteur;
+    })
   }
 
   ajoutAuteur = () => {
-    this.auteurService.create(this.auteur).subscribe((data) => {
+    this.auteurService.update(this.auteurId,this.auteur).subscribe((data) => {
       console.log(data);
       this.closeModal();
       window.location.reload();
@@ -30,11 +31,10 @@ export class EditComponent implements OnInit{
   };
   openModal() {
     this.display = 'block';
+    console.log(this.auteurId);
   }
 
   closeModal() {
     this.display = 'none';
   }
-
-  
 }

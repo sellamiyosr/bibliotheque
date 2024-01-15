@@ -7,7 +7,7 @@ import { TablesComponent } from './tables/tables.component';
 
 const routes: Routes = [
   { path: 'livres', redirectTo: 'livres/index', pathMatch: 'full' },
-  {path: 'livres/tables', component: TablesComponent},
+  {path: 'livre/tables', component: TablesComponent},
   { path: 'livres/index', component: IndexComponent },
   { path: 'livres/:livreId/details', component: DetailsComponent },
 ];
