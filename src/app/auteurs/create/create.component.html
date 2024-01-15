@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" routerLink="/products/create/" (click)="openModal()">
+<button type="button" class="btn btn-default" style="color: #e86252;" routerLink="/products/create/" (click)="openModal()">
     <i class="bi bi-plus-circle-fill"></i>
     Nouveau Auteur
 </button>
@@ -34,7 +34,7 @@
             <input type="text" class="form-control" id="numtel" name="numtel" placeholder="numtel" [(ngModel)]="auteur.numtel">
         </div>
         <div>
-            <button type="submit" class="btn btn-success" (clic)="ajoutAuteur()">Enregistrer</button>
+            <button type="submit" class="btn btn-default" style="color: #e86252;" (clic)="ajoutAuteur()">Enregistrer</button>
         </div>
     </form>
 </ng-template>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" routerLink="acceuil">Bibliothèque</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,4 +36,35 @@
   </nav>
 
 
-  
+   -->
+
+   
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a routerLink="acceuil" class="logo">
+                        <img src="assets/images/logo.png" style="width: 100px;" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a [ngClass]="{ 'active': isActive('/acceuil') }" routerLink="acceuil" class="active">Home</a></li>
+                        <li><a [ngClass]="{ 'active': isActive('/auteurs') }" routerLink="auteurs">Auteurs</a></li>
+                        <li><a [ngClass]="{ 'active': isActive('/editeurs') }" routerLink="editeurs">Editeurs</a></li>
+                        <li><a [ngClass]="{ 'active': isActive('/specialites') }" routerLink="specialites">Spécialités</a></li>
+                        <li><a [ngClass]="{ 'active': isActive('/livres') }" routerLink="livres">Livres</a></li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
