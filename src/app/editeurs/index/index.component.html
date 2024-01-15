@@ -24,12 +24,8 @@
                 <td>{{ editeur.maisonedit }}</td>
                 <td>{{ editeur.siteweb }}</td>
                 <td>{{ editeur.email }}</td>
-                <td>
-                   
-                    <a [routerLink]="['/editeurs/', editeur._id,'edit']" class="btn btn-default">
-                        <i class="bi bi-pencil-fill" style="color: dimgray;"></i>
-                    </a>
-
+                <td>           
+                    <app-edit [editeurId]="editeur._id"></app-edit>
                     <button type="button" (click)="deleteEditeur(editeur._id)" class="btn btn-default">
                         <i class="bi bi-trash-fill" style="color: brown;"></i>
                     </button>

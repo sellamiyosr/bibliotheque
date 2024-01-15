@@ -25,19 +25,18 @@
         </thead>
         <tbody>
             <tr *ngFor="let livres of livres">
-                <td><img src={{livres.couverture}} class="img-fluid rounded-start" style="height: 100px; width: 100px;"></td>
+                <td><img src={{livres.couverture}} class="img-fluid rounded-start" style="height: 100px; width: 100px;">
+                </td>
                 <td>{{ livres.titre }}</td>
                 <td>{{ livres.annedition }}</td>
                 <td>{{ livres.qtestock }}</td>
                 <td>{{ livres.prix }}</td>
-                <td>{{ livres.specialite }}</td>
+                <td>{{ livres.specialite.nomspecialite }}</td>
                 <td>{{ livres.editeur}}</td>
-                <td>{{ livres.auteurs}}</td>
+                <td>{{ livres.auteurs.id}}</td>
                 <td>
-                    <a [routerLink]="['/livres', livres._id,'edit']" class="btn btn-default">
-                        <i class="bi bi-pencil-fill" style="color: dimgray;"></i>
-                    </a>
 
+                    <app-edit [livreId]="livres._id"> </app-edit>
                     <button type="button" (click)="deleteLivre(livres._id)" class="btn btn-default">
                         <i class="bi bi-trash-fill" style="color: brown;"></i>
                     </button>

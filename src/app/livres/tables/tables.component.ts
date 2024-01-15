@@ -15,6 +15,9 @@ export class TablesComponent {
   this.livreService.getAll().subscribe((data: Livre[])=>{
   this.livres = data;
   }) 
+
+  console.log(this.livres);
+  
   }
   deleteLivre(_id:object){
     this.livreService.delete(_id).subscribe(res => {

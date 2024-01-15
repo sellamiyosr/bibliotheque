@@ -25,10 +25,6 @@
                 <td>{{ auteur.email }}</td>
                 <td>{{ auteur.numtel }}</td>
                 <td>
-                    
-                    <!-- <a [routerLink]="['/auteurs/', auteur._id,'edit']" class="btn btn-default">
-                        <i class="bi bi-pencil-fill" style="color: dimgray;"></i>
-                    </a> -->
                     <app-edit [auteurId]="auteur._id"></app-edit>
                     <button type="button" (click)="deleteAuteur(auteur._id)" class="btn btn-default">
                         <i class="bi bi-trash-fill" style="color: brown;"></i>

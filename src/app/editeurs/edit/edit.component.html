@@ -1,1 +1,40 @@
-<p>edit works!</p>
+<!-- Button trigger modal -->
+<a class="btn btn-default" (click)="openModal()">
+    <i class="bi bi-pencil-fill" style="color: dimgray;"></i>
+</a>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Auteur</h4>
+                <button type="button" class="btn btn-default" aria-label="Close" (click)="closeModal()"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <template *ngTemplateOutlet="formAuteur"></template>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form -->
+<ng-template #formAuteur>
+    <form (ngSubmit)="ajoutEditeur()">
+        <div class="mb-3">
+            <input type="text" class="form-control" id="maisonedit" name="maisonedit" placeholder="maisonedit" [(ngModel)]=" editeur.maisonedit">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="email" name="email" placeholder="@ Mail" [(ngModel)]=" editeur.email">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="siteweb" name="siteweb" placeholder="siteweb" [(ngModel)]=" editeur.siteweb">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-default" style="color: #e86252;" (clic)="ajoutEditeur()">Enregistrer</button>
+        </div>
+    </form>
+</ng-template>

@@ -7,6 +7,7 @@ import { DetailsComponent } from './details/details.component';
 import { TablesComponent } from './tables/tables.component';
 import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DetailsComponent,
     TablesComponent,
     CreateComponent,
+    EditComponent,
   ],
   imports: [
     CommonModule,
