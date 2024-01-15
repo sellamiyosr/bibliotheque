@@ -56,6 +56,7 @@
             <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/editeurs') }" routerLink="editeurs">Editeurs</a></li>
             <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/specialites') }" routerLink="specialites">Spécialités</a></li>
             <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/livres') }" routerLink="livres">Livres</a></li>
+            <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/livres/tables') }" routerLink="livres/tables">Liste des livres</a></li>
             <li><a *ngIf="!this.authService.isLoggedIn"  routerLinkActive="active" routerLink="/login">Sign in</a></li>
             <li><a (click)="logout()" *ngIf="this.authService.isLoggedIn" >Logout</a></li>
           </ul>
