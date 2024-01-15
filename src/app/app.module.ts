@@ -12,6 +12,7 @@ import { EditeursModule } from './editeurs/editeurs.module';
 import { LivresModule } from './livres/livres.module';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { CloudinaryModule } from '@cloudinary/ng';
+import { AuthentificationModule } from './authentification/authentification.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CloudinaryModule } from '@cloudinary/ng';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CloudinaryModule
+    CloudinaryModule,
+    AuthentificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
