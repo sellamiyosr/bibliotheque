@@ -1958,8 +1958,8 @@ Author Page Style
 }
 
 .author-page .item {
-  background-color: #282b2f;
-  border: 1px solid #404245;
+  background-color: #fbe5df;
+  border: 1px solid #fbe5df;
   padding: 30px;
   border-radius: 20px;
   position: relative;
@@ -1967,7 +1967,7 @@ Author Page Style
 }
 
 .author-page .item span {
-  color: #fff;
+  color: #230101;
   display: inline-block;
   font-size: 15px;
 }
