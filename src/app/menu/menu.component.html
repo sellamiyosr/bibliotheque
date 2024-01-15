@@ -38,33 +38,35 @@
 
    -->
 
-   
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a routerLink="acceuil" class="logo">
-                        <img src="assets/images/logo.png" style="width: 100px;" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a [ngClass]="{ 'active': isActive('/acceuil') }" routerLink="acceuil" class="active">Home</a></li>
-                        <li><a [ngClass]="{ 'active': isActive('/auteurs') }" routerLink="auteurs">Auteurs</a></li>
-                        <li><a [ngClass]="{ 'active': isActive('/editeurs') }" routerLink="editeurs">Editeurs</a></li>
-                        <li><a [ngClass]="{ 'active': isActive('/specialites') }" routerLink="specialites">Spécialités</a></li>
-                        <li><a [ngClass]="{ 'active': isActive('/livres') }" routerLink="livres">Livres</a></li>
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ***** Logo Start ***** -->
+          <a routerLink="livres" class="logo">
+            <img src="assets/images/logo.png" style="width: 100px;" alt="">
+          </a>
+          <!-- ***** Logo End ***** -->
+          <!-- ***** Menu Start ***** -->
+          <ul class="nav">
+            <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/auteurs') }" routerLink="auteurs">Auteurs</a></li>
+            <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/editeurs') }" routerLink="editeurs">Editeurs</a></li>
+            <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/specialites') }" routerLink="specialites">Spécialités</a></li>
+            <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/livres') }" routerLink="livres">Livres</a></li>
+            <li><a *ngIf="!this.authService.isLoggedIn"  routerLinkActive="active" routerLink="/login">Sign in</a></li>
+            <li><a (click)="logout()" *ngIf="this.authService.isLoggedIn" >Logout</a></li>
+          </ul>
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+          <!-- ***** Menu End ***** -->
+        </nav>
+       
+      </div>
     </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->

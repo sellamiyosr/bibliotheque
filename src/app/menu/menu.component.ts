@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { AuthService } from '../authentification/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export class MenuComponent {
   currentRoute!: string;
 
-  constructor(private router: Router) 
+  constructor(private router: Router, public authService: AuthService)
   {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -23,4 +24,8 @@ export class MenuComponent {
   isActive(path: string) {
     return this.currentRoute.startsWith(path);
   }
+
+  logout() {
+    this.authService.doLogout()
+    }
 }

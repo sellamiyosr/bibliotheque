@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpecialitesModule } from './specialites/specialites.module';
 import { EditeursModule } from './editeurs/editeurs.module';
 import { LivresModule } from './livres/livres.module';
-import { AcceuilComponent } from './acceuil/acceuil.component';
+
 import { CloudinaryModule } from '@cloudinary/ng';
 import { AuthentificationModule } from './authentification/authentification.module';
 
@@ -18,7 +18,7 @@ import { AuthentificationModule } from './authentification/authentification.modu
   declarations: [
     AppComponent,
     MenuComponent,
-    AcceuilComponent
+   
   ],
   imports: [
     BrowserModule,

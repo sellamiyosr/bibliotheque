@@ -13,7 +13,7 @@ constructor(private http: HttpClient, public router: Router) { }
 
 // Sign-up
 signUp(user: User): Observable<any> {
-return this.http.post(this.baseurl + '/register/', user);
+return this.http.post(this.baseurl + '/', user);
 }
 // Sign-in
 signIn(user: any) {
@@ -28,7 +28,7 @@ console.log(e);
 alert("Error !")
 },
 complete: () => {
-this.router.navigate(['products']);
+this.router.navigate(['livres']);
 }
 });
 }
