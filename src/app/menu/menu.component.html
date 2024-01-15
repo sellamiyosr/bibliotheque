@@ -57,7 +57,7 @@
             <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/specialites') }" routerLink="specialites">Spécialités</a></li>
             <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/livres') }" routerLink="livres">Livres</a></li>
             <li><a *ngIf="this.authService.isLoggedIn" [ngClass]="{ 'active': isActive('/livres/tables') }" routerLink="livres/tables">Liste des livres</a></li>
-            <li><a *ngIf="!this.authService.isLoggedIn"  routerLinkActive="active" routerLink="register">S'inscrire</a></li>
+            <li><a *ngIf="!this.authService.isLoggedIn"  routerLinkActive="active" routerLink="login">Se connecter</a></li>
             <li><a (click)="logout()" *ngIf="this.authService.isLoggedIn" >Se déconnecter</a></li>
           </ul>
           <a class='menu-trigger'>
