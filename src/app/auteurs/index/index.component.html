@@ -26,7 +26,7 @@
                 <td>{{ auteur.numtel }}</td>
                 <td>
                     <app-edit [auteurId]="auteur._id"></app-edit>
-                    <button type="button" (click)="deleteAuteur(auteur._id)" class="btn btn-default">
+                    <button type="button" (click)="confirmDelete(auteur._id)" class="btn btn-default">
                         <i class="bi bi-trash-fill" style="color: brown;"></i>
                     </button>
                 </td>

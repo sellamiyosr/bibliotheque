@@ -26,7 +26,7 @@
                 <td>{{ editeur.email }}</td>
                 <td>           
                     <app-edit [editeurId]="editeur._id"></app-edit>
-                    <button type="button" (click)="deleteEditeur(editeur._id)" class="btn btn-default">
+                    <button type="button" (click)="confirmDelete(editeur._id)" class="btn btn-default">
                         <i class="bi bi-trash-fill" style="color: brown;"></i>
                     </button>
                 </td>
