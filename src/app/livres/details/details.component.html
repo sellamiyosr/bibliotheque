@@ -1,4 +1,4 @@
-<div class="create-nft">
+<!-- <div class="create-nft">
     <div class="card mb-3" style="max-width: 90%; height: 700px; margin: 30px; ">
         <div class="row g-0">
             <div class="col-md-4">
@@ -17,4 +17,77 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<div class="item-details-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <br><br><br>  
+        </div>
+        <div class="col-lg-7">
+          <div class="left-image">
+            <img src="{{livreservice.couverture}}" alt="" style="border-radius: 30px; width: 60%; height: 600px;">
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <div >
+            <div class=""></div>
+            <h2><em>Titre: {{livreservice.titre}}</em></h2>
+          </div>
+     
+          <strong> <h5 style="color: black;">specialite: {{livreservice.specialite.nomspecialite}}</h5></strong>
+          <strong> <h5 style="color: black;">Quantité en stock: {{livreservice.qtestock}}</h5></strong>
+            <strong> <h5 style="color: black;">année édition: {{livreservice.annedition}}</h5></strong>
+
+
+            <div class="col-3">
+              <span class="bid">
+                <strong> Prix: {{livreservice.prix}} Dt</strong>
+              </span>
+            </div>
+            
+          <form action="submit">
+            <button type="submit" id="form-submit" class="main-button">Acheté</button>
+          </form>
+        </div>
+        
+        <div class="col-lg-12">
+          <div class="current-bid">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mini-heading" ><h4 style="color: white;">Recommendé</h4></div>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
+                      <option selected>Sort By: Latest</option>
+                      <option type="checkbox" name="option1" value="old">Sort By: Oldest</option>
+                      <option value="low">Sort By: Lowest</option>
+                      <option value="high">Sort By: Highest</option>
+                  </select>
+              </fieldset>
+              </div>
+          
+                <div class="col-lg-4 col-md-6"*ngFor="let livre of livres.slice(0, 6);; let i = index">
+                    <a href="#">
+                  <div class="item">
+                    <div class="left-img">
+                      <img src={{livre.couverture}} alt="" alt="">
+                    </div>
+                    <div class="right-content" [ngClass]="{'special-layout': i === 5}">
+                      <a  style="height: 50px; overflow: hidden;">{{livre.titre}}</a>
+                      <div class="line-dec" style="color: rgb(199, 74, 29);">{{livre.specialite.nomspecialite}}</div>
+                      <h6> <em>{{livre.prix}} DT</em></h6>
+                      <span class="date">{{livreservice.annedition}}</span>
+                    </div>
+                  </div>
+                </a>
+                </div>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

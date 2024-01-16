@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LivreserviceService } from '../livreservice.service';
+import { Livre } from '../livre';
 
 @Component({
   selector: 'app-details',
@@ -10,7 +11,7 @@ import { LivreserviceService } from '../livreservice.service';
 export class DetailsComponent implements OnInit{
   livreId!: object;
   livreservice: any;
-
+  livres: Livre[] = [];
   constructor(private route:ActivatedRoute,private livreserviceService:LivreserviceService){}
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -20,6 +21,12 @@ export class DetailsComponent implements OnInit{
         console.log('livreservice',livreservice);
       })
     }); 
+
+    this.livreserviceService.getAll().subscribe((data: Livre[])=>{
+      this.livres = data;
+      })
   }
+
+ 
 
 }

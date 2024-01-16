@@ -167,7 +167,7 @@ body {
 
 .main-button a {
   font-size: 14px;
-  color: #f22020;
+  color: #fff;
   background-color: #e86252;
   border: 1px solid #e86252;
   padding: 12px 30px;
@@ -1076,7 +1076,7 @@ Create NFT Style
 }
 
 .create-nft .item a {
-  color: rgb(255, 255, 255);
+  color: #3CF;
 }
 
 
@@ -1967,7 +1967,7 @@ Author Page Style
 }
 
 .author-page .item span {
-  color: #230101;
+  color: #fff;
   display: inline-block;
   font-size: 15px;
 }
