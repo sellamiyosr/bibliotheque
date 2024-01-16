@@ -27,6 +27,7 @@ export class DetailsComponent implements OnInit{
       })
   }
 
- 
-
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 }
